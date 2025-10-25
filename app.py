@@ -46,9 +46,23 @@ st.markdown("---")
 st.subheader("Add a Time")
 acol1, acol2, acol3, acol4 = st.columns([1, 1, 1, 1])
 with acol1:
-    add_hour = st.number_input("Hour (1-12)", 1, 12, 5, 1, format="%d", key="add_h")
+    add_hour = st.number_input(
+        "Hour (1-12)",
+        min_value=1,
+        max_value=12,
+        step=1,
+        format="%d",
+        key="add_h",
+    )
 with acol2:
-    add_min = st.number_input("Minutes (0-59)", 0, 59, 52, 1, format="%d", key="add_m")
+    add_min = st.number_input(
+        "Minutes (0-59)",
+        min_value=0,
+        max_value=59,
+        step=1,
+        format="%d",
+        key="add_m",
+    )
 with acol3:
     add_ampm = st.selectbox("AM/PM", ["AM", "PM"], index=1, key="add_ap")
 with acol4:
