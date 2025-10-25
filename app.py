@@ -116,7 +116,7 @@ if st.session_state.times:
     st.success(f"**{total_formatted}**")
 
     # Generate PDF
-    if st.button("📄 Download as PDF"):
+    if st.button("📄 Create PDF"):
         html = f"""
         <html>
         <head><meta charset='utf-8'><style>
@@ -131,9 +131,9 @@ if st.session_state.times:
         <h3>Total Time: {total_formatted}</h3>
         </body></html>
         """
-        config = pdfkit.configuration(wkhtmltopdf="/usr/bin/wkhtmltopdf")
+        # config = pdfkit.configuration(wkhtmltopdf="/usr/bin/wkhtmltopdf")
         with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as tmp:
-            pdfkit.from_string(html, tmp.name, configuration=config)
+            pdfkit.from_string(html, tmp.name)
             with open(tmp.name, "rb") as f:
                 st.download_button(
                     label="⬇️ Download PDF",
