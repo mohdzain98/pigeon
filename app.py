@@ -119,6 +119,7 @@ if st.session_state.times:
         )
 
     df = pd.DataFrame(rows)
+    df.index = df.index + 1
     st.subheader("🧾 Times & Differences")
     st.dataframe(df, use_container_width=True)
 
