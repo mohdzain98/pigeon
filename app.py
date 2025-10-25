@@ -7,7 +7,7 @@ import tempfile
 import os
 
 st.set_page_config(page_title="Time Difference (Sum) Calculator", layout="centered")
-st.title("🕒 Time Difference Sum Calculator — with PDF Download")
+st.title("🕒 Pigeon Time Calculator")
 
 # Initialize session state for added times
 if "times" not in st.session_state:
